@@ -1,7 +1,7 @@
 <template>
   <form>
     <ul>
-      <li v-for="item in data" :key="item.id" @click="addSelectedItem(item)">{{item.msg}}</li>
+      <ListItem v-for="item in data" :key="item.id" :item="item"></ListItem>
     </ul>
     <hr>
     <p>selections:</p>
@@ -13,7 +13,8 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapActions } from "vuex";
+import { mapState, mapGetters } from "vuex";
+import ListItem from "./ListItem.vue";
 
 export default {
   data() {
@@ -23,8 +24,8 @@ export default {
     ...mapState(["data", "selections"]),
     ...mapGetters(["dataCount"])
   },
-  methods: {
-    ...mapActions(["addSelectedItem"])
+  components: {
+    ListItem
   }
 };
 </script>
