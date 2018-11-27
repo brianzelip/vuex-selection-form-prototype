@@ -26,12 +26,6 @@ const store = new Vuex.Store({
     },
     REMOVE_SELECTED_ITEM: (state, payload) => {
       // payload is an id string
-      // state.selections = Object.keys(state.selections)
-      //   .filter(key => key !== payload)
-      //   .reduce((acc, key) => {
-      //     acc[key] = state.selections[key];
-      //     return acc;
-      //   }, {});
       Vue.delete(state.selections, payload);
     }
   },
