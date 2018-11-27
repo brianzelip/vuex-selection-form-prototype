@@ -12,7 +12,7 @@ const store = new Vuex.Store({
       { id: 4, msg: 'howdy' },
       { id: 5, msg: 'cheers' }
     ],
-    selections: []
+    selections: {}
   },
   getters: {
     dataCount: state => {
@@ -21,7 +21,7 @@ const store = new Vuex.Store({
   },
   mutations: {
     ADD_SELECTED_ITEM: (state, payload) => {
-      state.selections = state.selections.concat(payload);
+      state.selections = { ...state.selections, [payload.id]: payload };
     }
   },
   actions: {
