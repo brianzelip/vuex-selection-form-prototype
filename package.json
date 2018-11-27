@@ -1,0 +1,17 @@
+{
+  "name": "veux-quick",
+  "version": "0.1.0",
+  "main": "index.html",
+  "author": "bzelip",
+  "scripts": {
+    "start": "parcel index.html",
+    "p": "rm -rf dist && rm -rf .cache && parcel build index.html"
+  },
+  "dependencies": {
+    "vue": "^2.5.17",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.10.3"
+  }
+}
