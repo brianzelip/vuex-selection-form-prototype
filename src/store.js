@@ -21,12 +21,26 @@ const store = new Vuex.Store({
   },
   mutations: {
     ADD_SELECTED_ITEM: (state, payload) => {
+      // payload is an item object
       state.selections = { ...state.selections, [payload.id]: payload };
+    },
+    REMOVE_SELECTED_ITEM: (state, payload) => {
+      // payload is an id string
+      // state.selections = Object.keys(state.selections)
+      //   .filter(key => key !== payload)
+      //   .reduce((acc, key) => {
+      //     acc[key] = state.selections[key];
+      //     return acc;
+      //   }, {});
+      Vue.delete(state.selections, payload);
     }
   },
   actions: {
     addSelectedItem: ({ commit }, payload) => {
       commit('ADD_SELECTED_ITEM', payload);
+    },
+    removeSelectedItem: ({ commit }, payload) => {
+      commit('REMOVE_SELECTED_ITEM', payload);
     }
   }
 });
