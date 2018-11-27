@@ -11,22 +11,22 @@ const store = new Vuex.Store({
       { id: 3, msg: 'hi' },
       { id: 4, msg: 'howdy' },
       { id: 5, msg: 'cheers' }
-    ]
+    ],
+    selections: []
   },
   getters: {
-    data: state => state.data
+    dataCount: state => {
+      return state.data.length;
+    }
   },
   mutations: {
-    ADD_DATA_ITEM: (state, payload) => {
-      state.data = {
-        ...state.data,
-        '`${payload.id}`': payload
-      };
+    ADD_SELECTED_ITEM: (state, payload) => {
+      state.selections = state.selections.concat(payload);
     }
   },
   actions: {
-    addDataItem: ({ commit }, payload) => {
-      commit('ADD_DATA_ITEM', payload);
+    addSelectedItem: ({ commit }, payload) => {
+      commit('ADD_SELECTED_ITEM', payload);
     }
   }
 });
