@@ -3,7 +3,7 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
-const store = {
+const store = new Vuex.Store({
   state: {
     data: [
       { id: 1, msg: 'hello' },
@@ -29,6 +29,6 @@ const store = {
       commit('ADD_DATA_ITEM', payload);
     }
   }
-};
+});
 
 export default store;
