@@ -11,7 +11,24 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
-  props: ["item"]
+  data() {
+    return {
+      isSelected: false
+    };
+  },
+  props: ["item"],
+  methods: {
+    ...mapActions(["addSelectedItem", "removeSelectedItem"])
+  },
+  watch: {
+    isSelected() {
+      this.isSelected
+        ? this.addSelectedItem(this.item)
+        : this.removeSelectedItem(this.item.msg);
+    }
+  }
 };
 </script>
