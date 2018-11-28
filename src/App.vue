@@ -1,16 +1,16 @@
 <template>
   <div>
     <h1>Example of a list for a user to make selections</h1>
-    <TheList></TheList>
+    <TheForm></TheForm>
   </div>
 </template>
 
 <script>
-import TheList from "./components/TheList.vue";
+import TheForm from "./components/TheForm.vue";
 
 export default {
   components: {
-    TheList
+    TheForm
   }
 };
 </script>

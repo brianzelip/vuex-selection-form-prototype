@@ -1,7 +1,7 @@
 <template>
   <form>
     <ul>
-      <ListItem v-for="item in data" :key="item.id" :item="item"></ListItem>
+      <FormItem v-for="item in data" :key="item.id" :item="item"></FormItem>
     </ul>
     <hr>
     <p>selections:</p>
@@ -14,7 +14,7 @@
 
 <script>
 import { mapState, mapGetters } from "vuex";
-import ListItem from "./ListItem.vue";
+import FormItem from "./FormItem.vue";
 
 export default {
   data() {
@@ -25,7 +25,7 @@ export default {
     ...mapGetters(["selectionsCount"])
   },
   components: {
-    ListItem
+    FormItem
   }
 };
 </script>
