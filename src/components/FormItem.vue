@@ -1,28 +1,8 @@
 <template>
   <!-- <li @click="isSelected = !isSelected">{{ item.msg }}</li> -->
   <li>
-    <div style="display: inline-block; margin-right: 1rem">
-      <input
-        type="checkbox"
-        @click="isSelected = !isSelected"
-        name="items"
-        :id="`items-id-${item.id}`"
-      >
-      <label :for="`items-id-${item.id}`">{{ item.msg }}</label>
-    </div>
-    <div style="display: inline-block; margin-right: 1rem">
-      <span>qty:</span>
-      <template v-for="n in 3">
-        <label :for="`qty-id-${item.id}-val-${n}`" :key="`qty-id-${item.id}-val-${n}`">{{ n }}</label>
-        <input
-          type="radio"
-          :name="`qty-id-${item.id}`"
-          :id="`qty-id-${item.id}-val-${n}`"
-          :value="n"
-          :key="`qty-id-${item.id}-val-${n}`"
-        >
-      </template>
-    </div>
+    <FormItemCheckbox :item="item"></FormItemCheckbox>
+    <FormItemQty :id="item.id"></FormItemQty>
     <!-- <div style="display: inline-block">
       <span>type:</span>
       <input
@@ -38,6 +18,9 @@
 <script>
 import { mapActions } from "vuex";
 
+import FormItemCheckbox from "./FormItemCheckbox.vue";
+import FormItemQty from "./FormItemQty.vue";
+
 export default {
   data() {
     return {
@@ -45,6 +28,10 @@ export default {
     };
   },
   props: ["item"],
+  components: {
+    FormItemCheckbox,
+    FormItemQty
+  },
   methods: {
     ...mapActions(["addSelectedItem", "removeSelectedItem"])
   },
