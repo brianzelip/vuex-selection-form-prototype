@@ -15,8 +15,8 @@ const store = new Vuex.Store({
     selections: {}
   },
   getters: {
-    dataCount: state => {
-      return state.data.length;
+    selectionsCount: state => {
+      return Object.keys(state.selections).length;
     }
   },
   mutations: {

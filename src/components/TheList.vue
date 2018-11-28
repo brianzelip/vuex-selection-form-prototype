@@ -7,8 +7,8 @@
     <p>selections:</p>
     {{ selections }}
     <hr>
-    <p>data count:</p>
-    {{ dataCount }}
+    <p>selections count:</p>
+    {{ selectionsCount }}
   </form>
 </template>
 
@@ -22,7 +22,7 @@ export default {
   },
   computed: {
     ...mapState(["data", "selections"]),
-    ...mapGetters(["dataCount"])
+    ...mapGetters(["selectionsCount"])
   },
   components: {
     ListItem
