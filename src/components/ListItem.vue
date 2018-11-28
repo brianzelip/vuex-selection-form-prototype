@@ -33,7 +33,7 @@
         :value="`${item.type}`">
     </div>
   </li>
-</template> -->
+  </template>-->
 </template>
 
 <script>
@@ -53,7 +53,7 @@ export default {
     isSelected() {
       this.isSelected
         ? this.addSelectedItem(this.item)
-        : this.removeSelectedItem(this.item.id);
+        : this.removeSelectedItem(this.item.msg);
     }
   }
 };

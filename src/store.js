@@ -22,10 +22,10 @@ const store = new Vuex.Store({
   mutations: {
     ADD_SELECTED_ITEM: (state, payload) => {
       // payload is an item object
-      state.selections = { ...state.selections, [payload.id]: payload };
+      state.selections = { ...state.selections, [payload.msg]: payload };
     },
     REMOVE_SELECTED_ITEM: (state, payload) => {
-      // payload is an id string
+      // payload is a msg string
       Vue.delete(state.selections, payload);
     }
   },
