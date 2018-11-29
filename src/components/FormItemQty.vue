@@ -9,17 +9,30 @@
         :id="`qty-id-${id}-val-${n}`"
         :value="n"
         :key="`qty-id-${id}-val-${n}-input`"
+        v-model="qty"
+        @change="qtyChange()"
       >
     </template>
   </div>
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   data() {
     return {
-      maxQty: 6
+      maxQty: 6,
+      qty: 0
     };
+  },
+  computed: {
+    ...mapActions(["updateQty"])
+  },
+  methods: {
+    qtyChange() {
+      this.updateQty({ id: this.id, qty: this.qty });
+    }
   },
   props: ["id"]
 };
