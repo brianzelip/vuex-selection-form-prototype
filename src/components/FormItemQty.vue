@@ -10,7 +10,7 @@
         :value="n"
         :key="`qty-id-${id}-val-${n}-input`"
         v-model="qty"
-        @change="qtyChange()"
+        @change="qtyChange"
       >
     </template>
   </div>
@@ -31,9 +31,9 @@ export default {
   },
   methods: {
     qtyChange() {
-      this.updateQty({ id: this.id, qty: this.qty });
+      this.updateQty({ key: this.msg, qty: this.qty });
     }
   },
-  props: ["id"]
+  props: ["id", "msg"]
 };
 </script>

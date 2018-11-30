@@ -12,5 +12,5 @@ export const REMOVE_SELECTED_ITEM = (state, payload) => {
 
 export const UPDATE_QTY = (state, payload) => {
   // payload is an object like { id: 'id', qty: 1 }
-  state.selections[payload.msg].qty = payload.qty;
+  Vue.set(state.selections[payload.key], 'qty', payload.qty);
 };

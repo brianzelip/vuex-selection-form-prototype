@@ -1,7 +1,7 @@
 <template>
   <li>
     <FormItemCheckbox :item="item"></FormItemCheckbox>
-    <FormItemQty :id="item.id"></FormItemQty>
+    <FormItemQty :id="item.id" :msg="item.msg"></FormItemQty>
     <!-- <div style="display: inline-block">
       <span>type:</span>
       <input
