@@ -26,12 +26,12 @@ export default {
       qty: 0
     };
   },
+  props: ["item"],
   methods: {
     ...mapActions(["updateQty"]),
     qtyChange() {
       this.updateQty({ key: this.item.msg, qty: this.qty });
     }
-  },
-  props: ["item"]
+  }
 };
 </script>
