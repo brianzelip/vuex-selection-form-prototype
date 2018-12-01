@@ -26,10 +26,8 @@ export default {
       qty: 0
     };
   },
-  computed: {
-    ...mapActions(["updateQty"])
-  },
   methods: {
+    ...mapActions(["updateQty"]),
     qtyChange() {
       this.updateQty({ key: this.msg, qty: this.qty });
     }
